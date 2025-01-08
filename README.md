@@ -1,43 +1,46 @@
-# Les préréquis:
-
 **TP_01**
-
-`pip install pandas`
-
-
-
+```sh
+pip install pandas
+```
 **TP_02**
+Installez matplotlib
+```sh
+pip install pandas
+```
+```sh
+pip install matplotlib
+```
 
-`pip install pandas`
-
-`pip install matplotlib`
-
-
-Si vous utilisez un environnement virtuel, activez-le d'abord
+Si un environnement virtuel, activez-le d'abord
 Exemple pour un environnement virtuel sur Windows :
-`venv\Scripts\activate`
+
+```sh
+venv\Scripts\activate
+```
 
 Désactiver l'environnement virtuel
-`deactivate`
-
+```sh
+deactivate
+```
 
 Mise en place de environnement virtuel
-
-`python -m venv venv`
-
-
+```sh
+python -m venv venv
+```
 Avctiver l'environnement virtuel
-`venv\Scripts\activate`
-
-Ensuite, installez matplotlib
-
+```sh
+venv\Scripts\activate
+```
 Utiliser des chaînes brutes (raw string) avec un préfixe r
+```sh
 df = pd.read_csv(r'C:\Users\diginamic\Projet_dev2\TP_02\incidents_securite.csv')
-
+```
 Utiliser des doubles barres obliques inverses (\\)
 Pour éviter l'interprétation des séquences d'échappement
-`df = pd.read_csv('C:\\Users\\diginamic\\Projet_dev2\\TP_02\\incidents_securite.csv')`
-
+```sh
+df = pd.read_csv('C:\\Users\\diginamic\\Projet_dev2\\TP_02\\incidents_securite.csv')
+```
 Utiliser des barres obliques simples (/)
-
-`df = pd.read_csv('C:/Users/diginamic/Projet_dev2/TP_02/incidents_securite.csv')`
+```sh
+df = pd.read_csv('C:/Users/diginamic/Projet_dev2/TP_02/incidents_securite.csv')
+```
