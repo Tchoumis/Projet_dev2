@@ -12,7 +12,6 @@ df = pd.read_csv('C:\\Users\\diginamic\\Projet_dev2\\TP_02\\incidents_securite.c
 print("Premières lignes des données :")
 print(df.head())
 print("***************************************************************")
-print(df.info())
 
 
 #  Obtenir des informations sur les colonnes
@@ -27,7 +26,6 @@ print(df.describe())
 
 
 print("***************************************************************")
-# IV. Nettoyer les données
 # Vérifier les valeurs manquantes
 print("\nValeurs manquantes par colonne :")
 print(df.isnull().sum())
@@ -35,11 +33,11 @@ print(df.isnull().sum())
 
 print("***************************************************************")
 # Remplacer les valeurs manquantes par 'Inconnu'
-df.fillna('Inconnu', inplace=True) #Remplir les valeurs manquantes
+df.fillna('Inconnu', inplace=True)
 
 
 
-# V Analyser les données
+# Analyser les données
 # Nombre d'incidents par type
 incidents_par_type = df['Type_Incident'].value_counts()
 print("\nNombre d'incidents par type :")
@@ -47,8 +45,9 @@ print(incidents_par_type)
 
 print("***************************************************************")
 
-#  Distribution par date
+# Convertir la colonne 'Date' en datetime
 df['Date'] = pd.to_datetime(df['Date'])
+
 
 
 # Nombre d'incidents par mois
@@ -66,23 +65,21 @@ print(incidents_par_lieu)
 # Visualiser les données
 print("***************************************************************")
 
-#A. Diagramme en barres pour les types d'incidents
+##A. Diagramme en barres pour les types d'incidents
 # incidents_par_type.plot(kind='bar', title="Nombre d'incidents par type")
 # plt.xlabel('Type d\'incident')
 # plt.ylabel('Nombre d\'incidents')
 # plt.show()
-# 
-# 
-# 
-#B. Évolution des incidents dans le temps
+
+## B. Évolution des incidents dans le temps
 # incidents_par_mois.plot(title='Évolution des incidents dans le temps')
 # plt.xlabel('Temps (Année, Mois)')
 # plt.ylabel('Nombre d\'incidents')
 # plt.show()
 
 
-# Ajuster la taille
-plt.figure(figsize=(10, 6))  # Modifier la taille selon vos besoins
+# Ajuster la taille de la figure
+plt.figure(figsize=(10, 6))  # Modifie la taille selon les besoins
 incidents_par_type.plot(kind='bar', title="Nombre d'incidents par type")
 plt.xlabel('Type d\'incident')
 plt.ylabel('Nombre d\'incidents')
@@ -91,8 +88,8 @@ plt.tight_layout()  # Ajuste les espacements pour éviter que les étiquettes ne
 plt.show()
 
 
-# Ajuster la taille
-plt.figure(figsize=(10, 6))  # Modifier la taille selon vos besoins
+# Ajuster la taille de la figure
+plt.figure(figsize=(10, 6))  # Modifie la taille selon les besoins
 incidents_par_mois.plot(title='Évolution des incidents dans le temps')
 plt.xlabel('Temps (Année, Mois)')
 plt.ylabel('Nombre d\'incidents')
@@ -103,48 +100,3 @@ plt.show()
 
 # C. Exporter les résultats dans un fichier CSV
 df.to_csv('resultats_analyse.csv', index=False)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
